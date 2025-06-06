@@ -1,0 +1,38 @@
+yum install docker -y
+systemctl start docker
+systemctl enable docker
+docker login
+ mkdir docker
+ vi index.html
+ vi Dockerfile
+  docker build -t my-nginx . (. means current working dir)
+  docker run -d -p 8080:8080 --name tomcat-web imageid
+  docker tag kotesh-custom-tomcat your_dockerhub_username/kotesh-custom-tomcat:latest  (for tagging a image)
+    docker push kotish1031/project01:rcb
+
+
+    docker volume 
+    docker volume create myvolume
+    docker volume ls
+    docker volume inspect myvolume
+    docker run -d -p 8085:80 -v rcb:/data --name my-rcb d9428f4352ec
+     docker exec -it 644e94ecb17f /bin/sh
+     docker volume rm myvolume
+     docker volume prune
+
+
+
+Docker Network
+docker network ls
+docker network inspect <network-name>
+docker network create my_bridge_network
+docker network create mdocker run -dit --name webapp --network my_bridge_network nginx
+y_bridge_network
+curl -L 172.17.0.2
+docker network connect my_bridge_network my_container
+docker network disconnect my_bridge_network my_container
+docker network rm my_bridge_network
+host network
+docker run --network host nginx
+docker run  --rm --network host nginx
+  docker network prune
